@@ -17,6 +17,7 @@ class AngleCounter(QMainWindow):
 
         self.ui.pushButton_calculate.clicked.connect(lambda: self.create_json())
         self.ui.pushButton_send.clicked.connect(lambda: self.read_sock())
+        self.ui.pushButton_get.clicked.connect(lambda: self.changed_data())
 
     def take_value_x0(self):
         value = self.ui.lineEdit_x0.text()
@@ -71,21 +72,16 @@ class AngleCounter(QMainWindow):
         return file_json
 
     def read_sock(self):
-        ip = '127.0.0.1'
-        port = 5557
+        res = requests.get("http://localhost:5550/api/flask_test")
+        print(res.json())
 
-        server = socket.socket()
-        server.connect((ip, port))
-        f_name = input(str(self.create_json()))
-        server.send((bytes(f_name, encoding='UTF-8')))
-        f = open(f_name, "rb")
-        l = f.read(1024)
-        while l:
-            server.send(l)
-            #l = f.read(1024)
-            print(f)
-        f.close()
-        server.close()
+    def changed_data(self):
+        res = requests.put("http://localhost:5550/api/flask_test")
+        k = res.json()
+        print(k)
+        #data = k[0]['x']
+        self.ui.label_17.setText(str(k))
+        #print(data)
 
 
 

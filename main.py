@@ -7,7 +7,7 @@ import json
 from io import StringIO
 from PySide6.QtWidgets import QApplication, QMainWindow
 
-from main_win_cor import Ui_MainWindow, QPushButton
+from main_win_edit import Ui_MainWindow, QPushButton
 
 
 class AngleCounter(QMainWindow):
@@ -17,8 +17,8 @@ class AngleCounter(QMainWindow):
         self.ui.setupUi(self)
 
         self.ui.pushButton_calculate.clicked.connect(lambda: self.create_json())
-        self.ui.pushButton_send.clicked.connect(lambda: self.read_sock())
-        self.ui.pushButton_get.clicked.connect(lambda: self.changed_data())
+        #self.ui.pushButton_send.clicked.connect(lambda: self.read_sock())
+        #self.ui.pushButton_get.clicked.connect(lambda: self.changed_data())
 
     def take_value_x0(self):
         value = self.ui.lineEdit_x0.text()
@@ -57,21 +57,34 @@ class AngleCounter(QMainWindow):
         return value
 
     def create_json(self):
-        x0 = self.take_value_x0()
-        y0 = self.take_value_y0()
-        z0 = self.take_value_z0()
         x = self.take_value_x()
         y = self.take_value_y()
-        z = self.take_value_z()
-        v0 = self.take_value_v0()
         g = self.take_value_g()
         R = self.take_value_r()
-        myList = [{'x0': x0, 'y0': y0, 'z0': z0}, {'x': x, 'y': y, 'z': z}, {'v0': v0, 'g': g, 'R': R}]
+        myList = [{'x': x, 'y': y}]
+        list_g = [{'g': g}]
+        #list_R = [{}]
         jsonString = json.dumps(myList, indent=4)
+        jsonString2 = json.dumps(list_g, indent=4)
         file_json = open("ToServer.json", "w")
+        file_json2 = open("ToServer_g.json", "w")
         file_json.write(jsonString)
+        file_json2.write(jsonString2)
         file_json.close()
-        return file_json
+        file_json2.close()
+        res = requests.put("http://localhost:5550/api/flask_test")
+
+        def op():
+            with open('ToClientSolved.json') as file:
+                templates = json.load(file)
+            return templates
+        azimuth = op()[0]["azimuth"]
+        elevation = op()[0]["elevation"]
+        speed = op()[0]["speed"]
+        self.ui.label_azim.setText(str(azimuth))
+        self.ui.label_elev.setText(str(elevation))
+        self.ui.label_V.setText(str(speed))
+        return file_json, file_json2
 
     def read_sock(self):
         res = requests.get("http://localhost:5550/api/flask_test")
@@ -82,7 +95,7 @@ class AngleCounter(QMainWindow):
         k = res.json()
         print(k)
         #data = k[0]['x']
-        self.ui.label_17.setText(str(k))
+        self.ui.label_azim.setText(str(k))
         #print(data)
 
 
@@ -93,7 +106,7 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = AngleCounter()
     window.show()
-    window.setFixedSize(724, 361)
+    window.setFixedSize(724, 264)
 
 
     sys.exit(app.exec())

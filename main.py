@@ -4,6 +4,7 @@ import socket
 import threading
 import requests
 import json
+from io import StringIO
 from PySide6.QtWidgets import QApplication, QMainWindow
 
 from main_win_cor import Ui_MainWindow, QPushButton
@@ -69,6 +70,7 @@ class AngleCounter(QMainWindow):
         jsonString = json.dumps(myList, indent=4)
         file_json = open("ToServer.json", "w")
         file_json.write(jsonString)
+        file_json.close()
         return file_json
 
     def read_sock(self):

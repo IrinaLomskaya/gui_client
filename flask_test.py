@@ -8,25 +8,23 @@ import json
 app = Flask(__name__)
 api = Api(app)
 
-
-
-
-
-with open('ToServer.json') as file:
-    templates = json.load(file)
-
+def op():
+    with open('ToServer.json') as file:
+        templates = json.load(file)
+    return templates
 
 class Quote(Resource):
 
     def get(self):
-        return templates
+        return op()
 
     def put(self):
-        kk = templates[0]['x0']
+        kk = op()[0]['x0']
         print(kk)
         return int(kk) + 3
 
-
+    def delete(self):
+        return templates
 
 
 api.add_resource(Quote, "/api/flask_test")

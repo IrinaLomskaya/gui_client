@@ -1,4 +1,8 @@
+import encodings
 import sys
+import socket
+import threading
+import requests
 import json
 from PySide6.QtWidgets import QApplication, QMainWindow
 
@@ -12,6 +16,7 @@ class AngleCounter(QMainWindow):
         self.ui.setupUi(self)
 
         self.ui.pushButton_calculate.clicked.connect(lambda: self.create_json())
+        self.ui.pushButton_send.clicked.connect(lambda: self.read_sock())
 
     def take_value_x0(self):
         value = self.ui.lineEdit_x0.text()
@@ -63,6 +68,25 @@ class AngleCounter(QMainWindow):
         jsonString = json.dumps(myList, indent=4)
         file_json = open("ToServer.json", "w")
         file_json.write(jsonString)
+        return file_json
+
+    def read_sock(self):
+        ip = '127.0.0.1'
+        port = 5557
+
+        server = socket.socket()
+        server.connect((ip, port))
+        f_name = input(str(self.create_json()))
+        server.send((bytes(f_name, encoding='UTF-8')))
+        f = open(f_name, "rb")
+        l = f.read(1024)
+        while l:
+            server.send(l)
+            #l = f.read(1024)
+            print(f)
+        f.close()
+        server.close()
+
 
 
 
@@ -71,6 +95,7 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = AngleCounter()
     window.show()
+    window.setFixedSize(724, 361)
 
 
     sys.exit(app.exec())

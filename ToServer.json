@@ -1,17 +1,7 @@
-[
-    {
-        "x0": "12",
-        "y0": "13",
-        "z0": "13"
-    },
-    {
-        "x": "14",
-        "y": "15",
-        "z": "16"
-    },
-    {
-        "v0": "17",
-        "g": "18",
-        "R": "19"
-    }
-]
+{
+    "id": 0,
+    "author": "Kevin Kelly",
+    "quote": "The business plans of the next 10,000 startups are easy to forecast: "
+}
+
+

@@ -45,13 +45,22 @@ border-radius: 7px;</string>
       <height>31</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Noto Sans Oriya</family>
+      <pointsize>14</pointsize>
+      <weight>87</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgba(255, 255, 255, 60);
 border: 1px solid rgba(255, 25, 255, 70);
 border-radius: 7px;</string>
     </property>
     <property name="text">
-     <string>X0:</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;X0:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_coor_cel">
@@ -81,13 +90,22 @@ border-radius: 7px;</string>
       <height>41</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Noto Sans Oriya</family>
+      <pointsize>14</pointsize>
+      <weight>87</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgba(255, 255, 255, 60);
 border: 1px solid rgba(255, 25, 255, 70);
 border-radius: 7px;</string>
     </property>
     <property name="text">
-     <string>Начальная скорость</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Начальная скорость&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_10">
@@ -105,7 +123,7 @@ border: 1px solid rgba(255, 25, 255, 70);
 border-radius: 7px;</string>
     </property>
     <property name="text">
-     <string>V0:</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;V0:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_11">
@@ -121,6 +139,7 @@ border-radius: 7px;</string>
      <font>
       <family>Noto Sans Oriya</family>
       <pointsize>14</pointsize>
+      <weight>87</weight>
       <italic>false</italic>
       <bold>true</bold>
      </font>
@@ -131,7 +150,7 @@ border: 1px solid rgba(255, 25, 255, 70);
 border-radius: 7px;</string>
     </property>
     <property name="text">
-     <string>Ускорение св/падения</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Ускорение св/падения&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="textFormat">
      <enum>Qt::AutoText</enum>
@@ -152,7 +171,7 @@ border: 1px solid rgba(255, 25, 255, 70);
 border-radius: 7px;</string>
     </property>
     <property name="text">
-     <string>g:</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;g:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_13">
@@ -170,7 +189,7 @@ border: 1px solid rgba(255, 25, 255, 70);
 border-radius: 7px;</string>
     </property>
     <property name="text">
-     <string>Радиус сферы поражения</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Радиус сферы поражения&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_14">
@@ -188,7 +207,7 @@ border: 1px solid rgba(255, 25, 255, 70);
 border-radius: 7px;</string>
     </property>
     <property name="text">
-     <string>R:</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;R:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_calculate">
@@ -237,7 +256,7 @@ border: 1px solid rgba(255, 25, 255, 70);
 border-radius: 7px;</string>
     </property>
     <property name="text">
-     <string>Угол горизонтальный</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Угол азимутальный&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_16">
@@ -255,7 +274,7 @@ border: 1px solid rgba(255, 25, 255, 70);
 border-radius: 7px;</string>
     </property>
     <property name="text">
-     <string>Угол вертикальный</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Угол полярный&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_17">
@@ -273,7 +292,7 @@ border: 1px solid rgba(255, 25, 255, 70);
 border-radius: 7px;</string>
     </property>
     <property name="text">
-     <string>R:</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;R:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_18">
@@ -291,7 +310,7 @@ border: 1px solid rgba(255, 25, 255, 70);
 border-radius: 7px;</string>
     </property>
     <property name="text">
-     <string>R:</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;R:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_19">
@@ -309,7 +328,7 @@ border: 1px solid rgba(255, 25, 255, 70);
 border-radius: 7px;</string>
     </property>
     <property name="text">
-     <string>Y0:</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Y0:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">
@@ -327,7 +346,7 @@ border: 1px solid rgba(255, 25, 255, 70);
 border-radius: 7px;</string>
     </property>
     <property name="text">
-     <string>Z0:</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Z0:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_4">
@@ -345,7 +364,7 @@ border: 1px solid rgba(255, 25, 255, 70);
 border-radius: 7px;</string>
     </property>
     <property name="text">
-     <string>X:</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;X:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_20">
@@ -363,7 +382,7 @@ border: 1px solid rgba(255, 25, 255, 70);
 border-radius: 7px;</string>
     </property>
     <property name="text">
-     <string>Y:</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Y:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_5">
@@ -381,7 +400,7 @@ border: 1px solid rgba(255, 25, 255, 70);
 border-radius: 7px;</string>
     </property>
     <property name="text">
-     <string>Z:</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Z:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_x0">
@@ -517,6 +536,56 @@ border-radius: 7px;</string>
      <string notr="true">background-color: rgba(255, 255, 255, 60);
 border: 1px solid rgba(255, 25, 255, 70);
 border-radius: 7px;</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_send">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>240</y>
+      <width>331</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {background-color: rgba(255, 255, 255, 60);
+border: 1px solid rgba(255, 25, 255, 80);
+border-radius: 10px;}
+
+QPushButton:hover{
+background-color: rgba(255, 255, 255, 80);
+}
+QPushButton:pressed{
+background-color: rgba(255, 255, 255, 100);
+}</string>
+    </property>
+    <property name="text">
+     <string>Отправить ответ</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_get">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>240</y>
+      <width>321</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {background-color: rgba(255, 255, 255, 60);
+border: 1px solid rgba(255, 25, 255, 80);
+border-radius: 10px;}
+
+QPushButton:hover{
+background-color: rgba(255, 255, 255, 80);
+}
+QPushButton:pressed{
+background-color: rgba(255, 255, 255, 100);
+}</string>
+    </property>
+    <property name="text">
+     <string>Получить ответ</string>
     </property>
    </widget>
   </widget>

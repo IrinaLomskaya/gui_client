@@ -19,16 +19,17 @@ def op_g():
     return templates2
 class Quote(Resource):
 
-    def get(self):
-        return op()
+    # def get(self):
+    #     print(op())
+    #     return op()
 
     def eq(self, V, k):
         return ((V * V) * math.sin(2 * k * (math.pi / 180)) / 10000)
 
-    def put(self):
-        x = int(op()[0]['x'])
-        y = int(op()[0]['y'])
-        angle_azimuth = (math.atan(x/y))*(180/math.pi)
+    def post(self):
+        x = float(op()[0]['x'])
+        y = float(op()[0]['y'])
+        angle_azimuth = round((math.atan(x/y))*(180/math.pi))
         print(angle_azimuth)
         r = math.sqrt(x * x + y * y)
         aV = []
@@ -45,13 +46,19 @@ class Quote(Resource):
         V = aV[0]
         k = aK[0]
         new_list = [{"azimuth": int(angle_azimuth), "elevation": int(V), "speed": int(k)}]
-        def wr():
+        print(new_list)
+
+        #def wr():
             #with
-            json_new = open('ToClientSolved.json', 'w') #as file_json:
-            file_new = json.dumps(new_list, indent=4)
-            gg = json_new.write(file_new)
-            return gg
-        return wr()
+        # json_new = open('ToClientSolved.json', 'wt') #as file_json:
+        # file_new = json.dumps(new_list, indent=4)
+        # gg = json_new.write(file_new)
+        return new_list
+        #return wr()
+
+    #def post(self):
+
+
 
 
 

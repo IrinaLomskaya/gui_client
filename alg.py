@@ -10,8 +10,8 @@ def eq(V, k):
 
 
 
-x = 18
-y = 14
+x = 4
+y = 4
 r = math.sqrt(x*x + y*y)
 #print(r)
 
@@ -20,7 +20,7 @@ aK = []
 for V in range(100, 1000, 100):
     for k in range(1, 89):
         #print(k, V, eq(V, k), r)
-            if abs(r - (eq(V, k) )) < 0.1:
+            if abs(r - (eq(V, k) )) < 0.5:
                 aV.insert(V, k)
                 aK.insert(k, V)
 print(aV)

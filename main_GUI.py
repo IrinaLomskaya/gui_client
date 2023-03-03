@@ -72,7 +72,7 @@ class AngleCounter(QMainWindow):
         file_json2.write(jsonString2)
         file_json.close()
         file_json2.close()
-        res = requests.put("http://localhost:5550/api/flask_test")
+        res = requests.put("http://localhost:5556/api/flask_server")
 
         def op():
             with open('ToClientSolved.json') as file:
@@ -86,12 +86,12 @@ class AngleCounter(QMainWindow):
         self.ui.label_V.setText(str(speed))
         return file_json, file_json2
 
-    def read_sock(self):
-        res = requests.get("http://localhost:5550/api/flask_test")
-        print(res.json())
+    #def read_sock(self):
+        #res = requests.get("http://localhost:5555/api/flask_test")
+        #print(res.json())
 
     def changed_data(self):
-        res = requests.put("http://localhost:5550/api/flask_test")
+        res = requests.put("http://localhost:5556/api/flask_server")
         k = res.json()
         print(k)
         #data = k[0]['x']

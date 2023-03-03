@@ -46,14 +46,15 @@ class Quote(Resource):
         k = aK[0]
         new_list = [{"azimuth": int(angle_azimuth), "elevation": int(V), "speed": int(k)}]
         def wr():
-            with open('ToClientSolved.json', 'w') as file_json:
-                file_new = json.dumps(new_list, indent=4)
-                file_json.write(file_new)
-            return file_new
+            #with
+            json_new = open('ToClientSolved.json', 'w') #as file_json:
+            file_new = json.dumps(new_list, indent=4)
+            gg = json_new.write(file_new)
+            return gg
         return wr()
 
 
 
-api.add_resource(Quote, "/api/flask_test")
+api.add_resource(Quote, "/api/flask_server")
 if __name__ == '__main__':
-    app.run(debug=True, port=5550, host="127.0.0.1")
+    app.run(debug=True, port=5556, host="127.0.0.1")

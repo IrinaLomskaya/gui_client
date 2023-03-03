@@ -4,31 +4,23 @@ import math
 from flask import Flask
 from flask_restful import Api, reqparse, Resource
 import json
+from flask import request
 
 app = Flask(__name__)
 api = Api(app)
 
-def op():
-    with open('ToServer.json') as file:
-        templates = json.load(file)
-    return templates
 
-def op_g():
-    with open('ToServer_g.json') as file:
-        templates2 = json.load(file)
-    return templates2
 class Quote(Resource):
-
-    # def get(self):
-    #     print(op())
-    #     return op()
 
     def eq(self, V, k):
         return ((V * V) * math.sin(2 * k * (math.pi / 180)) / 10000)
 
+    @app.route("/flask_server", methods=['POST'])
     def post(self):
-        x = float(op()[0]['x'])
-        y = float(op()[0]['y'])
+        data = request.get_data()
+        stri = json.loads(data)
+        x = float(stri[0]['x'])
+        y = float(stri[0]['y'])
         angle_azimuth = round((math.atan(x/y))*(180/math.pi))
         print(angle_azimuth)
         r = math.sqrt(x * x + y * y)
@@ -47,21 +39,9 @@ class Quote(Resource):
         k = aK[0]
         new_list = [{"azimuth": int(angle_azimuth), "elevation": int(V), "speed": int(k)}]
         print(new_list)
-
-        #def wr():
-            #with
-        # json_new = open('ToClientSolved.json', 'wt') #as file_json:
-        # file_new = json.dumps(new_list, indent=4)
-        # gg = json_new.write(file_new)
         return new_list
-        #return wr()
-
-    #def post(self):
-
-
-
 
 
 api.add_resource(Quote, "/api/flask_server")
 if __name__ == '__main__':
-    app.run(debug=True, port=5556, host="127.0.0.1")
+    app.run(debug=True, port=5557, host="192.168.35.35")

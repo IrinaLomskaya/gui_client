@@ -19,7 +19,6 @@ class AngleCounter(QMainWindow):
         self.ui.pushButton_calculate.clicked.connect(lambda: self.create_json())
 
 
-
     def take_value_x(self):
         value = self.ui.lineEdit_x.text()
         return value
@@ -43,7 +42,11 @@ class AngleCounter(QMainWindow):
         R = self.take_value_r()
         myList = [{'x': x, 'y': y}]
         list_g = [{'g': g}]
-        send = requests.post("http://localhost:5556/api/flask_server", data=myList).json()
+        jsonString = json.dumps(myList, indent=4)
+        jsonString2 = json.dumps(list_g, indent=4)
+
+        send = requests.post("http://localhost:5557/api/flask_server", data=jsonString).json()
+
         azimuth = send[0]["azimuth"]
         elevation = send[0]["elevation"]
         speed = send[0]["speed"]
